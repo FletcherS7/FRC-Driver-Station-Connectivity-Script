@@ -2,7 +2,7 @@
 A batch file that performs the most common fixes for driver station comm's issues
 
 FRC_FMS_Firewall_fix_v2.bat must be run as admin in order for all commands to exacute.
-The script has pauses in it so the FTA/FTAA can read the output and check for errors, this is also so the batch can be closed if the last step fixed the connection problems.
+The script has pauses in it so the FTA/FTAA can read the output and check for errors, this is also so the batch can be closed if the last  step that was run fixed the connection problems.
 
 This script starts by adding the NI mDNS Responder and all the ports listed in the FMS White paper and the FTAA/CSA Troubleshooting. This is done in case the computer has other firewall software.
 
