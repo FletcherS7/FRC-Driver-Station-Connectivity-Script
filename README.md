@@ -2,7 +2,7 @@
 A batch file that performs the most common fixes for driver station comm's issues
 
 FRC_FMS_Firewall_fix_v2.bat must be run as admin in order for all commands to exacute.
-The script has pauses in it so the FTA/FTAA can read the output and check for errors, this also so the batch can be closed if that step fixes the connection problems.
+The script has pauses in it so the FTA/FTAA can read the output and check for errors, this is also so the batch can be closed if the last step fixed the connection problems.
 
 This script starts by adding the NI mDNS Responder and all the ports listed in the FMS White paper and the FTAA/CSA Troubleshooting. This is done in case the computer has other firewall software.
 
@@ -13,7 +13,7 @@ If the computer has more than 9 ethernet adapters, you will have to enable the r
 
 After that, the next step flushes the DNS and release all IP addresses. We then only renew IPv4.
 
-Finaly, the network adapter page is opened in case any more troubleshootingneeds to be done
+Finaly, the network adapter page is opened in case any more troubleshooting needs to be done
 
 After that the Windows update service is disabled to prevent Windows updating mid match.
 
