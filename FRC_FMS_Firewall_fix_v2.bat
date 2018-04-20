@@ -87,7 +87,7 @@ pause
 rem Disable all adapters
 wmic path win32_networkadapter where "NetEnabled='false'" call disable
 wmic path win32_networkadapter where "NetEnabled='true'" call disable
-rem Magic (disable Wireless stuff, Reset Ethernet adapters and set DHCP)
+rem Magic (enable Ethernet adapters and set DHCP)
 set LIST="Ethernet" "Ethernet 1" "Ethernet 2" "Ethernet 3" "Ethernet 4" "Ethernet 5" "Ethernet 6" "Ethernet 7" "Ethernet 8" "Ethernet 9" "Local Area Connection" "Local Area Connection 1" "Local Area Connection 2" "Local Area Connection 3" "Local Area Connection 4" "Local Area Connection 5" "Local Area Connection 6" "Local Area Connection 7" "Local Area Connection 8" "Local Area Connection 9" 
 FOR %%A IN (%LIST%) DO (
 	netsh interface show interface | FIND "%%A" /I /C
