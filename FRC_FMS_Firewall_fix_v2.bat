@@ -106,7 +106,10 @@ rem release everything and flush DNS
 ipconfig /flushdns
 ipconfig /release
 ipconfig /release6
-ipconfig /renew
+rem renew IP for all adapters containing Ethernet
+ipconfig /renew *Ethernet*
+rem renew IP for all adapters containing Local
+ipconfig /renew *Local*
 rem ipconfig /renew6 (Don't need to do this)
 echo dns flushed
 echo relese/renew
