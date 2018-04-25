@@ -1,7 +1,7 @@
 @echo off
 Title FRC   Open Firewall for FMS
 rem fancy color
-color 17
+color 06
 cls
 rem Display current firewall settings
 Netsh Advfirewall show allprofiles state
