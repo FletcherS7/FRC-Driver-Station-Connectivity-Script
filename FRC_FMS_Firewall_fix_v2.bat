@@ -20,6 +20,10 @@ netsh advfirewall firewall add rule name="Open Port UDP 1115" dir=in action=allo
 netsh advfirewall firewall add rule name="Open Port TCP 1115" dir=in action=allow protocol=TCP localport=1115
 netsh advfirewall firewall add rule name="Open Port UDP 1120" dir=in action=allow protocol=UDP localport=1120
 netsh advfirewall firewall add rule name="Open Port TCP 1120" dir=in action=allow protocol=TCP localport=1120
+netsh advfirewall firewall add rule name="Open Port UDP 1130" dir=in action=allow protocol=UDP localport=1130
+netsh advfirewall firewall add rule name="Open Port TCP 1130" dir=in action=allow protocol=TCP localport=1130
+netsh advfirewall firewall add rule name="Open Port UDP 1140" dir=in action=allow protocol=UDP localport=1130
+netsh advfirewall firewall add rule name="Open Port TCP 1140" dir=in action=allow protocol=TCP localport=1130
 netsh advfirewall firewall add rule name="Open Port UDP 1150" dir=in action=allow protocol=UDP localport=1150
 netsh advfirewall firewall add rule name="Open Port TCP 1150" dir=in action=allow protocol=TCP localport=1150
 netsh advfirewall firewall add rule name="Open Port UDP 1160" dir=in action=allow protocol=UDP localport=1160
