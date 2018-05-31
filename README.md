@@ -9,7 +9,7 @@ All three Windows firewall's are then disabled (Public, Private, Domain).
 
 The next step is a bit of magic. All network adapters are disabled. Adapters labeled as "Ethernet" (Win10) or "Local Area Connection" (Win7) are enabled again. If the computer has more than 9 Ethernet adapters, you will have to enable the rest manually.
 
-The next step flushes the DNS and release all IP addresses. We then only renew IPv4 (on Ethernet adapters).
+The next step flushes the DNS and releases all IP addresses. We then only renew IPv4 (on Ethernet adapters).
 
 Finally, the network adapter page is opened in case any more troubleshooting needs to be done
 
