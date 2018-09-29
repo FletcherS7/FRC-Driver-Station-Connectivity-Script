@@ -80,6 +80,9 @@ netsh advfirewall firewall add rule name="Open Port UDP 5809" dir=in action=allo
 netsh advfirewall firewall add rule name="Open Port TCP 5809" dir=in action=allow protocol=TCP localport=5809
 netsh advfirewall firewall add rule name="Open Port UDP 5810" dir=in action=allow protocol=UDP localport=5810
 netsh advfirewall firewall add rule name="Open Port TCP 5810" dir=in action=allow protocol=TCP localport=5810
+rem Cheesy Arena Ports (Disabled, Enable if using Cheesy Arena)
+rem netsh advfirewall firewall add rule name="Open Port UDP 8080" dir=in action=allow protocol=UDP localport=8080
+rem netsh advfirewall firewall add rule name="Open Port TCP 8080" dir=in action=allow protocol=TCP localport=8080
 echo FRC ports opened
 rem DISABLE ALL WINDOWS FIREWALLS
 NetSh Advfirewall set allprofiles state off

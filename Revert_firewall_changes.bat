@@ -76,6 +76,9 @@ netsh advfirewall firewall delete rule name="Open Port UDP 5809" protocol=UDP lo
 netsh advfirewall firewall delete rule name="Open Port TCP 5809" protocol=TCP localport=5809
 netsh advfirewall firewall delete rule name="Open Port UDP 5810" protocol=UDP localport=5810
 netsh advfirewall firewall delete rule name="Open Port TCP 5810" protocol=TCP localport=5810
+rem Cheesy Arena
+netsh advfirewall firewall delete rule name="Open Port UDP 8080" protocol=UDP localport=8080
+netsh advfirewall firewall delete rule name="Open Port TCP 8080" protocol=TCP localport=8080
 rem enable Windows Update Service
 echo Turn Windows Update Service On
 net start wuauserv
