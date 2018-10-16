@@ -1,4 +1,4 @@
-# FRC_FTA_DS-FMS_Script
+# FRC-Driver-Station-Connectivity-Script
 
 A batch file that performs the most common fixes for driver station comm's issues
 
