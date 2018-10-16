@@ -2,7 +2,7 @@
 
 A batch file that performs the most common fixes for driver station comm's issues
 
-FRC_FMS_Firewall_fix_v2.bat must be run as admin in order for all commands to execute. It is recomended you create a shortcut and add the option "Run as Administrator".
+FFS_Connect.bat must be run as admin in order for all commands to execute. It is recomended you create a shortcut and add the option "Run as Administrator".
 
 The script has pauses in it so the FTA/FTAA can read the output and check for errors, this is also so the batch can be closed if the last step that was run fixed the connection problems.
 
