@@ -27,3 +27,5 @@ The Windows update service is also disabled to prevent Windows updating mid matc
 
 Revert_firewall_changes.bat Removes the created rules, enables the firewall, and starts the windows update service again.
 
+
+Thank You to (Ed Jordan)[https://github.com/ejordan376] and (Eric Fletcher)[https://github.com/fletch3555]
