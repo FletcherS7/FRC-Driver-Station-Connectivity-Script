@@ -113,14 +113,17 @@ rem release everything and flush DNS
 ipconfig /flushdns
 ipconfig /release
 ipconfig /release6
+echo dns flushed
+echo relesed IP's
+rem Stop Windows Update Service
+net stop wuauserv
+rem open Network Adapters just in case
+control ncpa.cpl
+echo Get IP with DCHP?
+pause
 rem renew IP for all adapters containing Ethernet
 ipconfig /renew *Ethernet*
 rem renew IP for all adapters containing Local
 ipconfig /renew *Local*
 rem ipconfig /renew6 (Don't need to do this)
-echo dns flushed
-echo relese/renew
-rem open Network Adapters just in case
-control ncpa.cpl
-rem Stop Windows Update Service
-net stop wuauserv
+echo IP's Renewed
