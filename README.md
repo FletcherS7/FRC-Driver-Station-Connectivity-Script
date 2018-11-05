@@ -10,7 +10,7 @@ This script starts by adding the NI mDNS Responder and all the ports listed in t
 
 All three Windows firewall's are then disabled (Public, Private, Domain).
 
-All network adapters are then disabled. Adapters labeled as "Ethernet" (Win10) or "Local Area Connection" (Win7) are enabled again. If the computer has more than 9 Ethernet adapters, you will have to enable the rest manually.
+All network adapters are then disabled. Adapters labeled as "Ethernet" (Win10) or "Local Area Connection" (Win7) are enabled again. If the computer has more than 9 Ethernet adapters or custom named adapters, you will have to enable the rest manually.
 
 The next step flushes the DNS and releases all IP addresses. We then only renews IPv4 on Ethernet adapters.
 
