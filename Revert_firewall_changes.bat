@@ -46,6 +46,8 @@ netsh advfirewall firewall delete rule name="Open Port UDP 1189" protocol=UDP lo
 netsh advfirewall firewall delete rule name="Open Port TCP 1189" protocol=TCP localport=1189
 netsh advfirewall firewall delete rule name="Open Port UDP 1190" protocol=UDP localport=1190
 netsh advfirewall firewall delete rule name="Open Port TCP 1190" protocol=TCP localport=1190
+netsh advfirewall firewall delete rule name="Open Port UDP 1250" protocol=UDP localport=1250
+netsh advfirewall firewall delete rule name="Open Port TCP 1250" protocol=TCP localport=1250
 netsh advfirewall firewall delete rule name="Open Port UDP 1735" protocol=UDP localport=1735
 netsh advfirewall firewall delete rule name="Open Port TCP 1735" protocol=TCP localport=1735
 netsh advfirewall firewall delete rule name="Open Port UDP 1740" protocol=UDP localport=1740
