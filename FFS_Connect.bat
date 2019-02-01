@@ -121,7 +121,7 @@ rem Stop Windows Update Service
 net stop wuauserv
 rem open Network Adapters just in case
 control ncpa.cpl
-echo Get IP with DCHP?
+echo Get IP with DHCP?
 pause
 rem renew IP for all adapters containing Ethernet
 ipconfig /renew *Ethernet*
