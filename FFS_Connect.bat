@@ -5,6 +5,9 @@ color 06
 cls
 rem Display current firewall settings
 Netsh Advfirewall show allprofiles state
+rem DISABLE ALL WINDOWS FIREWALLS
+NetSh Advfirewall set allprofiles state off
+echo Windows Firewall off
 rem add NI mDNS Responser rule
 netsh advfirewall firewall add rule name="NI mDNS Responder" dir=in action=allow program="C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" enable=yes
 rem add FRC FMS Ports (Ports from FMS White paper and FTAA/CSA Troubleshooting (They don't specify UDP or TCP)
@@ -86,9 +89,6 @@ rem Cheesy Arena Ports (Disabled, Enable if using Cheesy Arena)
 rem netsh advfirewall firewall add rule name="Open Port UDP 8080" dir=in action=allow protocol=UDP localport=8080
 rem netsh advfirewall firewall add rule name="Open Port TCP 8080" dir=in action=allow protocol=TCP localport=8080
 echo FRC ports opened
-rem DISABLE ALL WINDOWS FIREWALLS
-NetSh Advfirewall set allprofiles state off
-echo Windows Firewall off
 rem Display current firewall settings
 Netsh Advfirewall show allprofiles state
 pause
