@@ -1,3 +1,6 @@
+rem Created by Fletcher Salesky
+rem FFS Connect (This verson from 2019-09-28)
+
 @echo off
 Title FRC   Open Firewall for FMS
 rem fancy color
@@ -10,7 +13,7 @@ NetSh Advfirewall set allprofiles state off
 echo Windows Firewall off
 rem add NI mDNS Responser rule
 netsh advfirewall firewall add rule name="NI mDNS Responder" dir=in action=allow program="C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" enable=yes
-rem add FRC FMS Ports (Ports from FMS White paper and FTAA/CSA Troubleshooting (They don't specify UDP or TCP)
+rem add FRC FMS Ports (Ports from FMS White paper and FTAA/CSA Troubleshooting
 netsh advfirewall firewall add rule name="Open Port UDP 80" dir=in action=allow protocol=UDP localport=80
 netsh advfirewall firewall add rule name="Open Port TCP 80" dir=in action=allow protocol=TCP localport=80
 netsh advfirewall firewall add rule name="Open Port UDP 443" dir=in action=allow protocol=UDP localport=443
