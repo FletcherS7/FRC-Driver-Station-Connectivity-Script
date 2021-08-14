@@ -13,7 +13,7 @@ NetSh Advfirewall set allprofiles state off
 echo Windows Firewall off
 rem add NI mDNS Responser rule
 netsh advfirewall firewall add rule name="NI mDNS Responder" dir=in action=allow program="C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" enable=yes
-rem add FRC FMS Ports (Ports from FMS White paper and FTAA/CSA Troubleshooting
+rem add FRC FMS Ports (Ports from FMS White paper and FTAA/CSA Troubleshooting)
 netsh advfirewall firewall add rule name="Open Port UDP 80" dir=in action=allow protocol=UDP localport=80
 netsh advfirewall firewall add rule name="Open Port TCP 80" dir=in action=allow protocol=TCP localport=80
 netsh advfirewall firewall add rule name="Open Port UDP 443" dir=in action=allow protocol=UDP localport=443
@@ -28,8 +28,8 @@ netsh advfirewall firewall add rule name="Open Port UDP 1120" dir=in action=allo
 netsh advfirewall firewall add rule name="Open Port TCP 1120" dir=in action=allow protocol=TCP localport=1120
 netsh advfirewall firewall add rule name="Open Port UDP 1130" dir=in action=allow protocol=UDP localport=1130
 netsh advfirewall firewall add rule name="Open Port TCP 1130" dir=in action=allow protocol=TCP localport=1130
-netsh advfirewall firewall add rule name="Open Port UDP 1140" dir=in action=allow protocol=UDP localport=1130
-netsh advfirewall firewall add rule name="Open Port TCP 1140" dir=in action=allow protocol=TCP localport=1130
+netsh advfirewall firewall add rule name="Open Port UDP 1140" dir=in action=allow protocol=UDP localport=1140
+netsh advfirewall firewall add rule name="Open Port TCP 1140" dir=in action=allow protocol=TCP localport=1140
 netsh advfirewall firewall add rule name="Open Port UDP 1150" dir=in action=allow protocol=UDP localport=1150
 netsh advfirewall firewall add rule name="Open Port TCP 1150" dir=in action=allow protocol=TCP localport=1150
 netsh advfirewall firewall add rule name="Open Port UDP 1160" dir=in action=allow protocol=UDP localport=1160
@@ -88,9 +88,11 @@ netsh advfirewall firewall add rule name="Open Port UDP 5809" dir=in action=allo
 netsh advfirewall firewall add rule name="Open Port TCP 5809" dir=in action=allow protocol=TCP localport=5809
 netsh advfirewall firewall add rule name="Open Port UDP 5810" dir=in action=allow protocol=UDP localport=5810
 netsh advfirewall firewall add rule name="Open Port TCP 5810" dir=in action=allow protocol=TCP localport=5810
-rem Cheesy Arena Ports (Disabled, Enable if using Cheesy Arena)
-rem netsh advfirewall firewall add rule name="Open Port UDP 8080" dir=in action=allow protocol=UDP localport=8080
-rem netsh advfirewall firewall add rule name="Open Port TCP 8080" dir=in action=allow protocol=TCP localport=8080
+netsh advfirewall firewall add rule name="Open Port UDP 8080" dir=in action=allow protocol=UDP localport=8080
+netsh advfirewall firewall add rule name="Open Port TCP 8080" dir=in action=allow protocol=TCP localport=8080
+netsh advfirewall firewall add rule name="Open Port UDP 8888" dir=in action=allow protocol=UDP localport=8888
+netsh advfirewall firewall add rule name="Open Port TCP 8888" dir=in action=allow protocol=TCP localport=8888
+
 echo FRC ports opened
 rem Display current firewall settings
 Netsh Advfirewall show allprofiles state
