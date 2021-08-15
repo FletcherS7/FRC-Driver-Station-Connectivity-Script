@@ -1,5 +1,5 @@
 rem Created by Fletcher Salesky
-rem FFS Connect (This verson from 2019-09-28)
+rem FFS Connect (This verson from 2021-08-14)
 
 @echo off
 Title FRC   Open Firewall for FMS
