@@ -12,9 +12,11 @@ echo "Disabled Windows Firewall"
 #Create Firwall allow rule for NI mDNS Responser
 function Install-Firewall-Rules
 {
+  echo "Checking if Firewall Rules already exist"
   $rule = Get-NetFirewallRule -Group "Allow FRC Driver Station FMS Comms" 2> $null;
     if ($rule) {
-         #enable-update rules if they exist    
+         #enable-update rules if they exist
+         echo "Existing rules found, Updated and Enabled Firewall Rules"
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_in -Direction Inbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1130,1140,1150,1160,1180-1190,1250,1735,1740,1750,5353,5800-5810,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_in -Direction Inbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1130,1140,1150,1160,1180-1190,1250,1735,1740,1750,5353,5800-5810,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_in -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Enabled True -Profile Any
@@ -26,6 +28,7 @@ function Install-Firewall-Rules
 
     else {
         #create rules if they do not exist
+        echo "Rules do not exist, Creating Firewall Rules"
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms TCP" -Direction Inbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1130,1140,1150,1160,1180-1190,1250,1735,1740,1750,5353,5800-5810,8080,8888 -Action Allow
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms UDP" -Direction Inbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1130,1140,1150,1160,1180-1190,1250,1735,1740,1750,5353,5800-5810,8080,8888 -Action Allow
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI mDNS Responder" -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow
@@ -46,7 +49,8 @@ Get-NetFirewallProfile | Format-List -Property Profile, Enabled
 #Stop Windows updates
 net stop wuauserv
 echo "Windows Update Service Stopped"
-echo ""
+echo " "
+echo " "
 echo "Reset Ethernet adapters and disable other adapters?"
 pause
 
