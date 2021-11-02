@@ -11,7 +11,7 @@ Launch_FFS_ConnectPS.bat must be run as admin in order for all commands to execu
 The script has pauses in it so the FTA/FTAA can read the output and check for errors, this is also so the script can be closed if the last function fixes the connection problems to the field
 
 ### Disable Windows Firewall
-Disables all three Windows Firewall's (Public, Private, Domain).
+Disables all three Windows Firewalls (Public, Private, Domain).
 
 ### Enable Firewall rules to allow comms to the field network
 Firewall rules are created for the NI mDNS Responder and all the ports listed in the FMS White paper, Season Manual, and FTAA/CSA Troubleshooting. This is done in case the computer has other firewall software.
@@ -20,12 +20,12 @@ Firewall rules are created for the NI mDNS Responder and all the ports listed in
 The Windows Update Service is stopped
 
 ### Disable All Network Adapters and Reset Physical 802.3 (Ethernet) Adapters
-All Network Adapters (Including Bluetooth and Cellular) are Disable. Physical 802.3 (Ethernet) Adapters are then reenabled.
-IPv6 is also disabled on all Physical 802.3 (Ethernet) Adapters
+All Network Adapters (Including Bluetooth and Cellular) are Disabled. Physical 802.3 (Ethernet) Adapters are then reenabled.
+IPv6 is also disabled on all Physical 802.3 (Ethernet) Adapters.
 
 ### Set Physical 802.3 (Ethernet) Adapters to use DHCP
-Physical 802.3 (Ethernet) Adapters are set to use DHCP for IP Addresses and DNS
-The DNS Cache is then flushed and all IP addresses releases
+Physical 802.3 (Ethernet) Adapters are set to use DHCP for IP Addresses and DNS. 
+The DNS Cache is then flushed and all IP addresses released.
 
 ### Network Adapter Control Panel opens
 ncpa.cpl is opened to allow ease to set a static IP for the connected Ethernet Adapter
