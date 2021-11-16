@@ -104,6 +104,9 @@ echo "IP Addresses Released"
 
 #open Network Adapters Conntrol Panel to allow Static IP setting
 control ncpa.cpl
+echo "Opened ncpa.cpl"
+echo ""
+echo ""
 
 echo "Get IP Address with DHCP?"
 pause
