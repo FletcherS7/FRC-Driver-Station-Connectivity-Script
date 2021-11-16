@@ -4,6 +4,7 @@
 A PowerShell script that performs the most common fixes for Driver Station comm's issues to the FRC Field Network
 
 Because of the default PowerShell restrictions in Windows. The FFS_Connect.ps1 is run by Launch_FFS_ConnectPS.bat
+
 The PowerShell script and the Batch file must be in the same directory
 
 Launch_FFS_ConnectPS.bat must be run as admin in order for all commands to execute. It is recommended you create a shortcut and add the option "Run as Administrator".
@@ -35,8 +36,8 @@ The renew command is issued for Physical 802.3 (Ethernet) Adapters.
 
 end
 
-
-
+#### Domain managed devices with Powershell GPO restrictions.
+If the device has a GPO applied that block unsigned Powershell, you can run the script by opening it in Powershell ISE launched as admin, selecting the lines of the script, and pressing F8 (Run Selection)
 
 
 
