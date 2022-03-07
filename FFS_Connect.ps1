@@ -94,7 +94,7 @@ foreach ($adapter in $physicalAdapters)
 
 }
 
-#flush DNS
+#Flush DNS
 Clear-DnsClientCache
 echo "DNS Flushed"
 #Release everything
@@ -102,11 +102,21 @@ ipconfig /release
 ipconfig /release6
 echo "IP Addresses Released"
 
-#open Network Adapters Control Panel to allow Static IP setting
-control ncpa.cpl
-echo "Opened ncpa.cpl"
-echo ""
-echo ""
+#Ask to open Network Adapters Control Panel to allow Static IP setting instead of using DHCP
+$confirmation = Read-Host "Open Network Adapters Control Panel to set Static IP? [Y/N]"
+while($confirmation -ne "n")
+{
+    if ($confirmation -eq 'y') 
+    {
+        control ncpa.cpl
+        echo "Opened ncpa.cpl"
+        echo ""
+        echo ""
+        Start-Sleep -s 2
+        exit
+    }
+    $confirmation = Read-Host "Open Network Adapters Control Panel to set Static IP? Must Answer [Y or N]"
+}
 
 echo "Get IP Address with DHCP?"
 pause
@@ -121,3 +131,4 @@ foreach ($adapter in $physicalAdapters)
 
 }
 Echo "Ethernet Adapter IP Addresses Renewed"
+Start-Sleep -s 2
