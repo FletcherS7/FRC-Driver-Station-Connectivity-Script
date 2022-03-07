@@ -1,5 +1,5 @@
 ﻿# Created by Fletcher Salesky
-# FFS Connect (This verson from 2021-10-06)
+# FFS Connect (This verson from 2022-03-07)
 
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
