@@ -28,11 +28,11 @@ IPv6 is also disabled on all Physical 802.3 (Ethernet) Adapters.
 Physical 802.3 (Ethernet) Adapters are set to use DHCP for IP Addresses and DNS. 
 The DNS Cache is then flushed and all IP addresses released.
 
-### Network Adapter Control Panel opens
-ncpa.cpl is opened to allow ease to set a static IP for the connected Ethernet Adapter
+### Prompt to open Network Adapter Control Panel
+ncpa.cpl can be opened to allow setting a static IP for the connected Ethernet Adapter
 
 ### Renew DHCP for Physical 802.3 (Ethernet) Adapters
-The renew command is issued for Physical 802.3 (Ethernet) Adapters.
+The renew command is issued for Physical 802.3 (Ethernet) Adapters if ncpa.cpl is not opened
 
 end
 
