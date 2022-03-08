@@ -37,7 +37,7 @@ The renew command is issued for Physical 802.3 (Ethernet) Adapters.
 end
 
 #### Domain managed devices with Powershell GPO restrictions.
-If the device has a GPO applied that block unsigned Powershell, you can run the script by opening it in Powershell ISE launched as admin, selecting the lines of the script, and pressing F8 (Run Selection)
+If the device has a GPO applied that blocks unsigned Powershell, you can run the script by opening it in Powershell ISE launched as admin, selecting the lines of the script, and pressing F8 (Run Selection)
 
 
 
