@@ -52,6 +52,8 @@ This Script disables the created rules, enables the Firewall, and starts the Win
 ## Acknowledgements
 [Ed Jordan](https://github.com/ejordan376)
 
+[Juan Jose Chong](https://github.com/juchong)
+
 [Eric Fletcher](https://github.com/fletch3555)
 
 Doug Frisk
