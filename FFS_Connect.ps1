@@ -118,8 +118,7 @@ while($confirmation -ne "n")
     $confirmation = Read-Host "Open Network Adapters Control Panel to set Static IP? Must Answer [Y or N]"
 }
 
-echo "Get IP Address with DHCP?"
-pause
+echo "Geting IP Address with DHCP"
 
 #Renew DHCP for Physical 802.3 Adapters
 foreach ($adapter in $physicalAdapters)
