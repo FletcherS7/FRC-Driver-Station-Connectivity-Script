@@ -46,6 +46,10 @@ echo "Firewall Opened to FRC Protocols"
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
 
+#Set Connection to Private
+echo "Setting Connection as Private"
+Set-NetConnectionProfile -NetworkCategory "Private"
+
 #Stop Windows updates
 net stop wuauserv
 echo "Windows Update Service Stopped"
