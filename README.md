@@ -1,6 +1,6 @@
 # FRC-Driver-Station-Connectivity-Script
 
-![](https://img.shields.io/github/v/release/FletcherS7/FRC-Driver-Station-Connectivity-Script)&nbsp;![](https://img.shields.io/badge/Windows-8.1%2B-success)&nbsp;![](https://img.shields.io/github/license/FletcherS7/FRC-Driver-Station-Connectivity-Script)
+![](https://img.shields.io/github/v/release/FletcherS7/FRC-Driver-Station-Connectivity-Script)&nbsp;![](https://img.shields.io/badge/Windows-10%2B-success)&nbsp;![](https://img.shields.io/github/license/FletcherS7/FRC-Driver-Station-Connectivity-Script)
 
 ## PowerShell Version
 A PowerShell script that performs the most common fixes for Driver Station comm's issues to the FRC Field Network
