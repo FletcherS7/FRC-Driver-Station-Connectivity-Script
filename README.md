@@ -43,7 +43,7 @@ If the device has a GPO applied that blocks unsigned Powershell, you can run the
 
 
 
-
+#### Revert Sctipt
 Launch_Revert_FFS_Connect_ChangesPS.bat launches Revert_FFS_Connect_Changes.ps1 (Must be in the same directory, and the batch file must be run as admin)
 This Script disables the created rules, enables the Firewall, and starts the Windows update service again.
 
