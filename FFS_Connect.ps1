@@ -1,6 +1,11 @@
-﻿# Created by Fletcher Salesky
-# FFS Connect (This verson from 2023-03-21)
-
+echo "    _________________    __________  _   ___   ____________________"
+echo "   / ____/ ____/ ___/   / ____/ __ \/ | / / | / / ____/ ____/_  __/"
+echo "  / /_  / /_   \__ \   / /   / / / /  |/ /  |/ / __/ / /     / /   "
+echo " / __/ / __/  ___/ /  / /___/ /_/ / /|  / /|  / /___/ /___  / /    "
+echo "/_/   /_/    /____/   \____/\____/_/ |_/_/ |_/_____/\____/ /_/     "
+echo "                                                                   "
+echo "FFS Connect (This version from 2023-04-13)"
+echo "Created by Fletcher Salesky"
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
 
@@ -46,10 +51,6 @@ echo "Firewall Opened to FRC Protocols"
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
 
-#Set Connection to Private
-echo "Setting Connection as Private"
-Set-NetConnectionProfile -NetworkCategory "Private"
-
 #Stop Windows updates
 net stop wuauserv
 echo "Windows Update Service Stopped"
@@ -83,6 +84,10 @@ foreach ($adapter in $physicalAdapters)
 echo "Wireless Adapters Disabled, Ethernet Adapters Reset"
 #Show Status of Adapters
 Get-NetAdapter | Format-List -Property Name,Status,AdminStatus,HardwareInterface
+
+#Set Connection to Private
+echo "Setting Connection as Private"
+Set-NetConnectionProfile -NetworkCategory "Private"
 
 echo "Set Ethernet adapters to use DHCP?"
 pause
