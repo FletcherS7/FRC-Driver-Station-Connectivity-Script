@@ -48,14 +48,6 @@ Launch_Revert_FFS_Connect_ChangesPS.bat launches Revert_FFS_Connect_Changes.ps1 
 This Script disables the created rules, enables the Firewall, and starts the Windows update service again.
 
 
-## [USB Rubber Ducky Version](https://github.com/FletcherS7/FRC-Driver-Station-Connectivity-Script/tree/master/ducky)
-Created by [Juan Jose Chong](https://github.com/juchong) 
-
-This version of the script is encoded to be run from a USB Rubber Ducky
-
-Most Windows computers with stock security settings should be vulnerable to this deployment method, But computers with additional security polices applied and/or additional security software may block this deployment method.
-
-
 
 
 ## Acknowledgements
