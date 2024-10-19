@@ -1,5 +1,5 @@
 # Created by Fletcher Salesky
-# This Script undoes the changes made by FFS Connect (This verson from 2023-11-26)
+# This Script undoes the changes made by FFS Connect (This verson from 2024-10-19)
 
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
@@ -12,10 +12,12 @@ echo "Enabled Windows Firewall"
 Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_in -Direction Inbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled False -Profile Any
 Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_in -Direction Inbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled False -Profile Any
 Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_in -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Enabled False -Profile Any
+Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_in -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Enabled False -Profile Any
 
 Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_out -Direction Outbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled False -Profile Any
 Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_out -Direction Outbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled False -Profile Any
 Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_out -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Enabled False -Profile Any
+Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_out -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Enabled False -Profile Any
 
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled

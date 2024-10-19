@@ -18,6 +18,7 @@ echo "Disabled Windows Firewall"
 
 #Create Firewall allow rules for FIRST Robotics Competition Field Managment System (FMS) Ports (Ports from the Season Game Manual, FMS White Paper, WPIlib Docs and the FTAA/CSA Troubleshooting).
 #Create Firewall allow rule for National Instruments mDNS Responser.
+#Create Firewall allow rule for National Instruments Driver Station.
 function Install-Firewall-Rules
 {
   echo "Checking if Firewall Rules already exist"
@@ -28,10 +29,12 @@ function Install-Firewall-Rules
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_in -Direction Inbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_in -Direction Inbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_in -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Enabled True -Profile Any
+         Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_in -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Enabled True -Profile Any
 
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_out -Direction Outbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_out -Direction Outbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_out -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Enabled True -Profile Any
+         Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_out -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Enabled True -Profile Any
     }
 
     else {
@@ -40,10 +43,12 @@ function Install-Firewall-Rules
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms TCP" -Direction Inbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Profile Any
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms UDP" -Direction Inbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -LocalPort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Profile Any
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI mDNS Responder" -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Profile Any
+        New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI Driver Stationr" -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Profile Any
 
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_out -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms TCP" -Direction Outbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Profile Any
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_out -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms UDP" -Direction Outbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1122,1130,1140,1150,1160,1180-1190,1250,1735,1740,1741,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Profile Any
         New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_out -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI mDNS Responder" -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Profile Any
+        New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_out -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI Driver Station" -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Profile Any
     }
 }
 
