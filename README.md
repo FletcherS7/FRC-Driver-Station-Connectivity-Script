@@ -17,7 +17,7 @@ The script has pauses in it so the FTA/FTAA can read the output and check for er
 Disables all three Windows Firewalls (Public, Private, Domain).
 
 ### Enable Firewall rules to allow comms to the field network
-Firewall rules are created for the NI mDNS Responder and all the ports listed in the FMS White paper, Season Manual, and FTAA/CSA Troubleshooting. This is done in case the computer has other firewall software.
+Firewall rules are created for the FRC Driver Station and NI mDNS Responder as well as all the ports listed in the FMS White paper, Season Manual, and FTAA/CSA Troubleshooting. This is done in case the computer has other firewall software.
 
 ### Stop Windows updates
 The Windows Update Service is stopped
