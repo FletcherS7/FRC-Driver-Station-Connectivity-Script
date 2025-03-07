@@ -4,7 +4,7 @@ echo "  / /_  / /_   \__ \   / /   / / / /  |/ /  |/ / __/ / /     / /   "
 echo " / __/ / __/  ___/ /  / /___/ /_/ / /|  / /|  / /___/ /___  / /    "
 echo "/_/   /_/    /____/   \____/\____/_/ |_/_/ |_/_____/\____/ /_/     "
 echo "                                                                   "
-echo "FFS Connect (This version from 2025-03-06)"
+echo "FFS Connect (This version from 2025-03-07)"
 echo "Created by Fletcher Salesky"
 #A PowerShell script that performs the most common fixes for Driver Station communication issues to the FIRST Robotics Competition Field Managment System Field Network.
 #Learn more about this script, get updates, and contribute at https://driverstation.app 
@@ -103,6 +103,19 @@ foreach ($adapter in $physicalAdapters)
     {
         netsh interface ip set address $adapter.Name dhcp
         netsh interface ip set dns $adapter.Name dhcp
+    }
+
+}
+
+#Get All IPv4 Address 
+$IPAddresses = Get-NetIPAddress -AddressFamily IPv4
+
+#Remove Satic IPv4 address on Physical Adapters
+foreach ($IPAddress in $IPAddresses)
+{
+    if (($IPAddress.SuffixOrigin -like "*Manual") -and ($IPAddress.InterfaceAlias -eq $adapter.Name))
+    {
+        Remove-NetIPAddress -IPAddress $IPAddress.IPv4Address
     }
 
 }
