@@ -33,12 +33,13 @@ function Install-Firewall-Rules
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_TCP_out -Direction Outbound -Protocol TCP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1121,1122,1130,1140,1145,1150,1160,1164,1166,1180-1190,1250,1735,1740,1741,1742,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_UDP_out -Direction Outbound -Protocol UDP -RemoteAddress 10.0.0.0/8 -RemotePort 80,443,554,1110,1115,1120,1121,1122,1130,1140,1145,1150,1160,1164,1166,1180-1190,1250,1735,1740,1741,1742,1750,5353,5800-5810,6666,8080,8888 -Action Allow -Enabled True -Profile Any
          Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_mDNS_out -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe" -Action Allow -Enabled True -Profile Any
-         if (Get-NetFirewallRule "FRC_Driver_Station_FMS_Comms_DS_in" 2> $null)
+         #check if DS software rules exists, enable-update rules if they exist
+		 if (Get-NetFirewallRule "FRC_Driver_Station_FMS_Comms_DS_in" 2> $null)
          {
               Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_in -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Enabled True -Profile Any
               Set-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_out -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Enabled True -Profile Any
          }
-
+         #create DS software rules if they don't exist
          else {
               New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_in -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI Driver Stationr" -Direction Inbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Profile Any   
               New-NetFirewallRule -Name FRC_Driver_Station_FMS_Comms_DS_out -Group "Allow FRC Driver Station FMS Comms" -DisplayName "FRC Driver Station FMS Comms NI Driver Station" -Direction Outbound -RemoteAddress 10.0.0.0/8 -Program "C:\Program Files (x86)\FRC Driver Station\DriverStation.exe" -Action Allow -Profile Any
@@ -118,7 +119,7 @@ foreach ($adapter in $physicalAdapters)
 #Get All IPv4 Address 
 $IPAddresses = Get-NetIPAddress -AddressFamily IPv4
 
-#Remove Satic IPv4 address on Physical Adapters
+#Remove Static IPv4 addresses on Physical Adapters
 foreach ($IPAddress in $IPAddresses)
 {
     if (($IPAddress.SuffixOrigin -like "*Manual") -and ($IPAddress.InterfaceAlias -eq $adapter.Name))
@@ -127,7 +128,7 @@ foreach ($IPAddress in $IPAddresses)
     }
 
 }
-
+echo "Ethernet Adapters set to use DHCP"
 #Flush DNS
 Clear-DnsClientCache
 echo "DNS Cache Flushed"
@@ -152,7 +153,7 @@ while($confirmation -ne "n")
     $confirmation = Read-Host "Open Network Adapters Control Panel to set Static IP? Must Answer [Y or N]"
 }
 
-echo "Geting IP Address with DHCP"
+echo "Getting IP Address with DHCP"
 
 #Renew DHCP for Physical 802.3 Adapters
 foreach ($adapter in $physicalAdapters)
