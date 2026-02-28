@@ -10,5 +10,5 @@ rem fancy color
 color 06
 cls
 rem Launch Powershell Script
-if exist "%~dp0FFS_Connect.ps1" (Powershell -noprofile -executionpolicy bypass -file %~dp0FFS_Connect.ps1)
+if exist "%~dp0FFS_Connect.ps1" (Powershell -noprofile -executionpolicy bypass -file "%~dp0FFS_Connect.ps1")
 pause

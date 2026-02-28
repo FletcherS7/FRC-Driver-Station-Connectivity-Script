@@ -7,5 +7,5 @@ rem fancy color
 color 06
 cls
 rem Launch Powershell Script
-if exist "%~dp0Revert_FFS_Connect_Changes.ps1" (Powershell -noprofile -executionpolicy bypass -file %~dp0Revert_FFS_Connect_Changes.ps1)
+if exist "%~dp0Revert_FFS_Connect_Changes.ps1" (Powershell -noprofile -executionpolicy bypass -file "%~dp0Revert_FFS_Connect_Changes.ps1")
 pause
