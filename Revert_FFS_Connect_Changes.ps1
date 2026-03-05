@@ -1,5 +1,5 @@
 # Created by Fletcher Salesky
-# This Script undoes the changes made by FFS Connect (This verson from 2025-03-06)
+# This Script undoes the changes made by FFS Connect (This verson from 2026-02-28)
 #Learn more about this script, get updates, and contribute at https://driverstation.app 
 
 #Display current firewall settings

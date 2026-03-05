@@ -1,6 +1,6 @@
 @echo off
 rem Created by Fletcher Salesky
-rem Revert FFS Connect Changes Powershell Launcher (This verson from 2021-10-06)
+rem Revert FFS Connect Changes Powershell Launcher (This verson from 2026-02-28)
 
 Title Revert FFS Connect Changes
 rem fancy color
