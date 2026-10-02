@@ -2,7 +2,7 @@
 rem Created by Fletcher Salesky
 rem FFS Connect Powershell Launcher (This verson from 2026-02-28)
 rem Launcher for a PowerShell script that performs the most common fixes for Driver Station communication issues to the FIRST Robotics Competition Field Managment System Field Network.
-rem Learn more about this script, get updates, and contribute at https://driverstation.app 
+rem Learn more about this script, get updates, and contribute at https://driverstation.dev
 
 rem FRC FMS Station Connect to The Field
 Title FFS Connect to The Field
