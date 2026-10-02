@@ -7,7 +7,7 @@ echo "                                                                   "
 echo "FFS Connect (This version from 2026-02-28)"
 echo "Created by Fletcher Salesky"
 #A PowerShell script that performs the most common fixes for Driver Station communication issues to the FIRST Robotics Competition Field Managment System Field Network.
-#Learn more about this script, get updates, and contribute at https://driverstation.app 
+#Learn more about this script, get updates, and contribute at https://driverstation.dev
 
 #Display current firewall settings.
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
