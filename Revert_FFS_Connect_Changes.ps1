@@ -1,6 +1,6 @@
 # Created by Fletcher Salesky
 # This Script undoes the changes made by FFS Connect (This verson from 2026-02-28)
-#Learn more about this script, get updates, and contribute at https://driverstation.app 
+#Learn more about this script, get updates, and contribute at https://driverstation.dev
 
 #Display current firewall settings
 Get-NetFirewallProfile | Format-List -Property Profile, Enabled
